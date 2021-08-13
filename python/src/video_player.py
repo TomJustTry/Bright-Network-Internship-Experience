@@ -47,7 +47,6 @@ class VideoPlayer:
                 if video.video_id == video_id:
                     if self.is_video_playing.playing_state == False:
                         print(f"Playing video: {video.title}")
-                        self.is_video_playing.yes(video)
                     else:
                         print(f"Stopping video: {self.is_video_playing.which_video.title}")
                         print(f"Playing video: {video.title}")
