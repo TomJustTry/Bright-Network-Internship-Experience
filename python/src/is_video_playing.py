@@ -8,7 +8,4 @@ class isVideoPlaying:
     def no(self):
         self.playing_state = False
         self.which_video = None
-    @property
-    def playing_state(self):
-        return self.playing_state
 

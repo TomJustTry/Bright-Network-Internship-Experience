@@ -9,9 +9,7 @@ class VideoPlayer:
 
     def __init__(self):
         self._video_library = VideoLibrary()
-##        self.is_video_playing = isVideoPlaying
-##        self.is_video_playing.no(self)
-        self.is_video_playing = False
+        self.is_video_playing = isVideoPlaying()
 
     def number_of_videos(self):
         num_videos = len(self._video_library.get_all_videos())
@@ -47,15 +45,14 @@ class VideoPlayer:
                 break
             else:
                 if video.video_id == video_id:
-                    if self.is_video_playing == False:
+                    if self.is_video_playing.playing_state == False:
                         print(f"Playing video: {video.title}")
-                        current_video = video.title
+                        self.is_video_playing.yes(video)
                     else:
-                        print(f"Stopping video: {current_video}")
+                        print(f"Stopping video: {self.is_video_playing.which_video.title}")
                         print(f"Playing video: {video.title}")
                         
-                    self.is_video_playing = True
-                    current_video = video.title
+                    self.is_video_playing.yes(video)
                     
                     break
 
